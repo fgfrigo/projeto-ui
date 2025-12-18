@@ -1,0 +1,54 @@
+{
+  "name": "ai_presentation",
+  "version": "1.0.0",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js",
+    "start:dev": "npm run build && concurrently \"npm run livereload:server\" \"npm run livereload:client\"",
+    "livereload:server": "npx nodemon --config nodemon.json",
+    "build": "vite build --config client/main_module/vite.config.mjs --mode production",
+    "livereload:client": "vite serve --config client/main_module/vite.config.mjs --host",
+    "lint": "npx eslint --fix --config eslint.config.mjs",
+    "format": "prettier --write . --config .prettierrc.config.mjs",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "authors": [
+    "jungleBadger"
+  ],
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@fastify/cookie": "^9.3.1",
+    "@fastify/formbody": "^7.4.0",
+    "@fastify/multipart": "^8.3.0",
+    "@fastify/passport": "^2.5.0",
+    "@fastify/secure-session": "^7.5.1",
+    "@fastify/session": "^10.9.0",
+    "@fastify/static": "^7.0.4",
+    "axios": "^1.7.3",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.1",
+    "jsonwebtoken": "^9.0.3",
+    "pino": "^9.3.2",
+    "pino-pretty": "^11.2.2",
+    "reveal.js": "^5.1.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^8.2.2",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-vue": "^9.27.0",
+    "globals": "^15.9.0",
+    "nodemon": "^3.1.4",
+    "postcss": "^8.4.41",
+    "prettier": "^3.3.3",
+    "sass": "^1.77.8",
+    "tailwindcss": "^3.4.7",
+    "vite": "^7.1.1",
+    "vue": "^3.5.18"
+  }
+}
